@@ -41,18 +41,16 @@ export default async function fetchNFT(
     // Some details about the token
     "function tokenURI(uint256) view returns (string)",
   ];
-  console.log("Load", provider)
+
   const contract = new ethers.Contract(contractAddress, ABI, provider);
   const resp = await contract.tokenURI(tokenId);
   let metadata;
-  console.log(resp)
   if (resp.includes("data:application/json;base64")) {
     // Check for base64 encoded json
     const jsonBase64 = resp.split(",")[1];
     metadata = JSON.parse(base64.decode(jsonBase64));
   } else if (resp.indexOf("http") == 0) {
     // Fetch the json from the http url
-    console.log(resp)
     metadata = await fetch(resp).then((r: Response) => r.json());
   } else if (resp.indexOf("ipfs") == 0) {
     metadata = await fetch(proxyIPFS(resp)).then((r: Response) => r.json());
