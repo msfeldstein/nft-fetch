@@ -1,0 +1,32 @@
+{
+  "name": "nft-fetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "npm run build ; mocha test/test.js --timeout 10000",
+    "example": "parcel example/example.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "ethers": "^5.4.7",
+    "ipfs-core": "^0.11.1",
+    "isomorphic-unfetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/base-64": "^1.0.0",
+    "chai": "^4.3.4",
+    "dotenv": "^10.0.0",
+    "http-server": "^13.0.2",
+    "mocha": "^9.1.2",
+    "parcel": "^2.0.0-rc.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  }
+}
