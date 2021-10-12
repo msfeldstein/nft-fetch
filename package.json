@@ -2,7 +2,7 @@
   "name": "nft-fetch",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack",
     "test": "npm run build ; mocha test/test.js --timeout 10000",
